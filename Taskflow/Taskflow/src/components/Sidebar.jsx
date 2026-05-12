@@ -1,21 +1,52 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Sidebar = () => {
+  const location = useLocation();
+  console.log(location);
   return (
     <aside>
       <ul>
         <li>
-          <Link to="/">Dashboard</Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "active-link" : "normal-link"
+            }
+          >
+            Dashboard
+          </NavLink>
         </li>
         <li>
-          <Link to="/tasks">Tasks</Link>
+          <NavLink
+            to="/tasks"
+            className={({ isActive }) =>
+              isActive ? "active-link" : "normal-link"
+            }
+          >
+            Tasks
+          </NavLink>
         </li>
         <li>
-          <Link to="/analytics">Analytics</Link>
+          <NavLink
+            to="/analytics"
+            className={({ isActive }) =>
+              isActive ? "active-link" : "normla-link"
+            }
+          >
+            Analytics
+          </NavLink>
         </li>
         <li>
-          <Link to="/settings">Settings</Link>
+          <NavLink
+            to="/settings"
+            className={({ isActive }) =>
+              isActive ? "active-link" : "normla-link"
+            }
+          >
+            Settings
+          </NavLink>
         </li>
       </ul>
     </aside>
