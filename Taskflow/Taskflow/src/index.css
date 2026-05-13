@@ -27,20 +27,172 @@ main {
 nav {
   height: 60px;
   border-bottom: 1px solid #ccc;
+
   display: flex;
   align-items: center;
+
   padding: 0 20px;
+  gap: 20px;
 }
 
-nav {
-  height: 60px;
-  border-bottom: 1px solid #ccc;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
+nav h1 {
+  margin-right: auto;
+  margin-left: 50px;
+}
+
+button {
+  margin-right: 200px;
+  height: 60%;
+  width: 5%;
 }
 
 .active-link {
   font-weight: bold;
   color: blue;
+}
+
+.dark {
+  background-color: #111;
+  color: white;
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.tasks-page {
+  padding: 2rem;
+}
+
+.tasks-title {
+  margin-bottom: 1rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.filter-buttons button {
+  padding: 0.5rem 1rem;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #1e293b;
+  color: white;
+  min-width: fit-content;
+
+  cursor: pointer;
+}
+
+.task-input-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.task-input {
+  flex: 1;
+  padding: 0.7rem;
+  font-size: 1rem;
+}
+
+.add-task-btn {
+  padding: 0.7rem 1.2rem;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #16a34a;
+  color: white;
+
+  font-size: 1rem;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+  min-width: fit-content;
+}
+
+.add-task-btn:hover {
+  opacity: 0.9;
+}
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  border-radius: 12px;
+  border: 1px solid #d4d4d4;
+
+  background-color: white;
+}
+
+.task-text {
+  flex: 1;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-shrink: 0;
+}
+
+.task-btn {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+
+  background-color: #2563eb;
+  color: white;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.task-btn:hover {
+  opacity: 0.9;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 350px;
+
+  padding: 0.7rem;
+  margin-top: 1rem;
+
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.active-filter {
+  background-color: #2563eb !important;
 }
