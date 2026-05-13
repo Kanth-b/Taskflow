@@ -25,11 +25,12 @@ const TaskItem = ({ task, onDelete, onToggle, onEdit }) => {
               handleSave();
             }
           }}
+          className="edit-input"
         />
       ) : (
-        <span className={`task-text ${task.completed ? "completed-task" : ""}`}>
+        <p className={`task-text ${task.completed ? "completed-task" : ""}`}>
           {task.text}
-        </span>
+        </p>
       )}
 
       <div className="task-actions">

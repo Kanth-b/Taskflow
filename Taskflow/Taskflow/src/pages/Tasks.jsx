@@ -116,7 +116,11 @@ const Tasks = () => {
         </button>
       </div>
       {filteredTasks.length === 0 ? (
-        <p>No Tasks found!</p>
+        <div className="empty-state">
+          <h2>No Tasks Found</h2>
+
+          <p>Add a new task to get started.</p>
+        </div>
       ) : (
         <TaskList
           tasks={filteredTasks}

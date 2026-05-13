@@ -7,7 +7,7 @@ const Sidebar = () => {
   console.log(location);
   return (
     <aside>
-      <ul>
+      <ul className="side-bar">
         <li>
           <NavLink
             to="/"

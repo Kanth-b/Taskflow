@@ -41,7 +41,6 @@ nav h1 {
 }
 
 button {
-  margin-right: 200px;
   height: 60%;
   width: 5%;
 }
@@ -72,6 +71,14 @@ a {
 
 .tasks-page {
   padding: 2rem;
+
+  min-height: 100vh;
+
+  background-color: #f1f5f9;
+}
+
+.tasks-page {
+  margin: 0 auto;
 }
 
 .tasks-title {
@@ -80,7 +87,6 @@ a {
 
 .filter-buttons {
   display: flex;
-  gap: 1rem;
   margin: 1rem 0;
 }
 
@@ -95,6 +101,7 @@ a {
   min-width: fit-content;
 
   cursor: pointer;
+  margin-right: auto;
 }
 
 .task-input-container {
@@ -136,21 +143,80 @@ a {
 .task-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   gap: 1rem;
 
-  padding: 1rem;
+  padding: 1rem 1.2rem;
   margin-bottom: 1rem;
 
-  border-radius: 12px;
-  border: 1px solid #d4d4d4;
-
+  border-radius: 16px;
   background-color: white;
+  border: 1px solid #e2e8f0;
+
+  transition: all 0.2s ease;
+
+  max-width: 1200px;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .task-text {
   flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  min-width: 500px;
+}
+
+.edit-input {
+  flex: 1;
+
+  padding: 0.6rem;
+
+  border-radius: 8px;
+  border: 1px solid #ccc;
+
+  font-size: 1rem;
+}
+
+.task-btn,
+.add-task-btn,
+.filter-buttons button {
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.task-btn:hover,
+.add-task-btn:hover,
+.filter-buttons button:hover {
+  transform: translateY(-1px);
+}
+
+.task-input,
+.search-input,
+.edit-input,
+select {
+  border: 1px solid #cbd5e1;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  transition: border-color 0.2s ease;
+}
+
+.task-input:focus,
+.search-input:focus,
+.edit-input:focus,
+select:focus {
+  border-color: #2563eb;
+}
+
+.empty-state {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
 }
 
 .completed-task {
@@ -161,6 +227,7 @@ a {
 .task-actions {
   display: flex;
   gap: 0.7rem;
+
   flex-shrink: 0;
 }
 
@@ -213,4 +280,26 @@ a {
   min-width: fit-content;
 
   cursor: pointer;
+}
+
+.empty-state {
+  margin-top: 3rem;
+  padding: 3rem 2rem;
+
+  border-radius: 16px;
+
+  text-align: center;
+
+  background-color: #f8fafc;
+  border: 2px dashed #cbd5e1;
+}
+
+.empty-state h2 {
+  margin-bottom: 0.5rem;
+
+  font-size: 1.8rem;
+}
+
+.empty-state p {
+  color: #64748b;
 }
