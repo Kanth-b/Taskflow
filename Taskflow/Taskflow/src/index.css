@@ -196,3 +196,21 @@ a {
 .active-filter {
   background-color: #2563eb !important;
 }
+
+.add-task-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.filter-buttons .clear-tasks {
+  background-color: #dc2626;
+
+  padding: 0.5rem 1rem;
+
+  border: none;
+  border-radius: 8px;
+  color: white;
+  min-width: fit-content;
+
+  cursor: pointer;
+}

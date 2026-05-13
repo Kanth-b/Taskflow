@@ -10,9 +10,18 @@ const TaskInput = ({ taskInput, setTaskInput, onAddTask }) => {
         placeholder="Enter task"
         value={taskInput}
         onChange={(e) => setTaskInput(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            onAddTask();
+          }
+        }}
       />
 
-      <button className="add-task-btn" onClick={onAddTask}>
+      <button
+        className="add-task-btn"
+        onClick={onAddTask}
+        disabled={!taskInput.trim()}
+      >
         Add Task
       </button>
     </div>

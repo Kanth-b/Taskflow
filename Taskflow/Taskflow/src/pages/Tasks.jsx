@@ -53,6 +53,29 @@ const Tasks = () => {
       ),
     );
   }
+
+  function handleAllClearTasks() {
+    const deleteConfirm = confirm(
+      "Do you really want to delete all the tasks?",
+    );
+
+    if (deleteConfirm) {
+      setTasks([]);
+    }
+  }
+
+  function handleEditTask(taskId, editedText) {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId
+          ? {
+              ...task,
+              text: editedText,
+            }
+          : task,
+      ),
+    );
+  }
   return (
     <div className="tasks-page">
       <h1 className="tasks-title">Tasks Page</h1>
@@ -88,6 +111,9 @@ const Tasks = () => {
         >
           Completed
         </button>
+        <button className="clear-tasks" onClick={() => handleAllClearTasks()}>
+          Clear All
+        </button>
       </div>
       {filteredTasks.length === 0 ? (
         <p>No Tasks found!</p>
@@ -96,6 +122,7 @@ const Tasks = () => {
           tasks={filteredTasks}
           onDelete={handleDeleteTask}
           onToggle={handleToggleTask}
+          onEdit={handleEditTask}
         />
       )}
     </div>
