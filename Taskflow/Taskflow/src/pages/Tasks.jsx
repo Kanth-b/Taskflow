@@ -1,18 +1,15 @@
 import React from "react";
 import { useState } from "react";
-import TaskList from "./TaskList";
-import TaskInput from "./TaskInput";
+import TaskList from "../components/tasks/TaskList";
+import TaskInput from "../components/tasks/TaskInput";
 import { useEffect } from "react";
+import { useContext } from "react";
+import { TaskContext } from "../App";
 
 const Tasks = () => {
-  const [tasks, setTasks] = useState(() => {
-    const savedTasks = localStorage.getItem("tasks");
-
-    return savedTasks ? JSON.parse(savedTasks) : [];
-  });
   const [taskInput, setTaskInput] = useState("");
-  const [filter, setFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const { tasks, setTasks, filter, setFilter } = useContext(TaskContext);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));

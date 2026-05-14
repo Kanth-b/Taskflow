@@ -28,26 +28,6 @@ const Sidebar = () => {
             Tasks
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/analytics"
-            className={({ isActive }) =>
-              isActive ? "active-link" : "normla-link"
-            }
-          >
-            Analytics
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/settings"
-            className={({ isActive }) =>
-              isActive ? "active-link" : "normla-link"
-            }
-          >
-            Settings
-          </NavLink>
-        </li>
       </ul>
     </aside>
   );
